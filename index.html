@@ -1,0 +1,103 @@
+<!-- /*
+Hello!
+We now know how to send properties from component. 
+Please create one 'greetings' functional component and 
+a 'greetings' class component such that the name is sent as attribute 
+from the component, is read as props and is displayed on screen 
+as "Hello XYZ" or "Hello Jane!".
+
+Upload the code to git and share the link.
+
+=====
+Link- 
+=====
+
+*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            background-color: #635555fa;
+            /* backface-visibility: hidden; */
+        }
+
+
+        .fun {
+            width: 420px;
+            background-image: url(https://img.freepik.com/free-vector/abstract-watercolor-background_23-2149038179.jpg?t=st=1718703592~exp=1718707192~hmac=c1411349c43c4972d85260598cb4e64f34787ec309f40b70e44eb4539cf5e61c&w=740);
+            background-repeat: no-repeat;
+            background-position: 100%;
+            background-size: cover;
+            color: rgb(0, 0, 0);
+            border-radius: 20pt;
+            border-color: black;
+            padding: 30px 40px 50px 60px;
+            margin: auto;
+            margin-top: 140px;
+            margin-bottom: 30px;
+            box-shadow: 2px 3px 3px rgb(3, 3, 3);
+
+        }
+
+        .classcard {
+            width: 420px;
+            background-image: url(https://img.freepik.com/free-vector/abstract-watercolor-background_23-2149050921.jpg?t=st=1718703799~exp=1718707399~hmac=28fb8d367f3cce4c558e4c6f5208f11372f16a5c1d3f74c4b8d7292160d64e8b&w=740);
+            background-repeat: no-repeat;
+            background-position: 90%;
+            background-size: cover;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.811);
+            color: rgb(0, 0, 0);
+            border-radius: 20pt;
+            padding: 30px 40px 50px 60px;
+            margin: auto;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div id="root">Must Change</div>
+
+    <script type="text/babel">
+
+        let rootnode = ReactDOM.createRoot(document.getElementById('root'));
+
+        let FunGreet = (props) => {
+            return (
+                <div className="fun col-sm-4">
+                    <h1> Hello {props.name} !! </h1>
+                    <h3> <b>Greeting By Function</b></h3>
+                </div>
+            )
+        }
+
+        class ClassGreet extends React.Component {
+            render() {
+                return (
+                    <div className='classcard col-sm-4'>
+                        <h1> Hello , {this.props.name} !! </h1>
+                        <h3> <b>Greeting By Class  </b></h3>
+                    </div>
+                )
+            }
+        }
+
+        rootnode.render([<FunGreet name="Sireesa Mam" />, <ClassGreet name="Vikash Sir" />]);
+
+    </script>
+
+</body>
+
+</html>
